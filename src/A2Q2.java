@@ -41,21 +41,20 @@ public class A2Q2 {
         //inserting finish line
         new Thing(race, 5, 8);
         //making timmy finish the race
-        if (timmy.frontIsClear() == false)
+        while(true){
+          if (timmy.frontIsClear() == false)
         timmy.turnLeft();
-        if (timmy.frontIsClear() == true)
+         if (timmy.frontIsClear() == true)
         timmy.move();
-        while (true)
-       if (timmy.frontIsClear() == true)
-            timmy.turnLeft();
-            timmy.turn
-        
-        
-        
-        
-        
-        
-        
+        timmy.move
        
-    }
-}
+         if (timmy.frontIsClear() == true)
+            timmy.turnLeft();
+            timmy.turnLeft();
+            timmy.turnLeft();
+         
+        
+            
+      }}
+        
+ 
