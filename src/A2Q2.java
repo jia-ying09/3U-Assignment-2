@@ -46,12 +46,16 @@ public class A2Q2 {
         timmy.turnLeft();
          if (timmy.frontIsClear() == true)
         timmy.move();
-        timmy.move
+     
        
          if (timmy.frontIsClear() == true)
             timmy.turnLeft();
+            timmy.turnLeft();                 
             timmy.turnLeft();
-            timmy.turnLeft();
+   
+        }
+        
+        }
          
         
             
