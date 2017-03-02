@@ -9,7 +9,6 @@ import becker.robots.Wall;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author linj4653
@@ -22,8 +21,10 @@ public class A2Q2 {
     public static void main(String[] args) {
         // creating race track
         City race = new City();
+
         //creating robot Timmy
-        Robot timmy = new Robot (race, 5, 0, Direction.EAST);
+        Robot timmy = new Robot(race, 5, 0, Direction.EAST);
+
         //creating track
         new Wall(race, 5, 0, Direction.EAST);
         new Wall(race, 5, 1, Direction.EAST);
@@ -38,27 +39,37 @@ public class A2Q2 {
         new Wall(race, 5, 6, Direction.SOUTH);
         new Wall(race, 5, 7, Direction.SOUTH);
         new Wall(race, 5, 8, Direction.SOUTH);
+
         //inserting finish line
         new Thing(race, 5, 8);
+
         //making timmy finish the race
-        while(true){
-          if (timmy.frontIsClear() == false)
-        timmy.turnLeft();
-         if (timmy.frontIsClear() == true)
-        timmy.move();
-     
-       
-         if (timmy.frontIsClear() == true)
-            timmy.turnLeft();
-            timmy.turnLeft();                 
-            timmy.turnLeft();
-   
+        while (true) {
+
+            //making timmy move around the wall
+            if (timmy.frontIsClear() == false) {
+                timmy.turnLeft();
+                timmy.move();
+                timmy.turnLeft();
+                timmy.turnLeft();
+                timmy.turnLeft();
+                timmy.move();
+                timmy.turnLeft();
+                timmy.turnLeft();
+                timmy.turnLeft();
+                timmy.move();
+                timmy.turnLeft();
+
+                //making timmy move forward if there is no wall
+            } else if (timmy.frontIsClear() == true) {
+                timmy.move();
+            }
+
+            //making timmy pick up the item and stop
+            if (timmy.canPickThing() == true) {
+                timmy.pickThing();
+                break;
+            }
         }
-        
-        }
-         
-        
-            
-      }}
-        
- 
+    }
+}

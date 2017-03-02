@@ -21,8 +21,10 @@ public class A2Q4 {
     public static void main(String[] args) {
         // create town
         City town = new City();
+
         //create king
-        Robot king = new Robot(town, 0, 0, Direction.EAST);
+        Robot king = new Robot(town, 1, 2, Direction.EAST);
+
         //creating castle
         new Wall(town, 1, 1, Direction.NORTH);
         new Wall(town, 1, 1, Direction.SOUTH);
@@ -48,22 +50,40 @@ public class A2Q4 {
         new Wall(town, 3, 3, Direction.EAST);
         new Wall(town, 2, 2, Direction.WEST);
         new Wall(town, 3, 2, Direction.WEST);
-        //making the robot move
-while(true)
-            if (king.frontIsClear() == true) {
-                king.move();
-                king.move();
-                king.turnLeft();
-                king.turnLeft();
-                king.turnLeft();
-                king.move();
-            } else if (king.frontIsClear() == false) {
-                king.turnLeft();
-                king.move();
-            }
-            else if ()
+
+        //making the robot move forward one space
+        king.move();
+
+        //loop
+        while (true) {
+
+            // move around the wall
+            king.turnLeft();
+            king.move();
+
+            //move forward
+            king.turnLeft();
+            king.turnLeft();
+            king.turnLeft();
+            king.move();
+            king.move();
+
+            // move around the corners
+            king.turnLeft();
+            king.turnLeft();
+            king.turnLeft();
+            king.move();
+            king.move();
+            king.turnLeft();
+            king.turnLeft();
+            king.turnLeft();
+
+            // move closer to the castle
+            king.move();
+            king.turnLeft();
+            king.move();
 
         }
+
     }
-}
 }

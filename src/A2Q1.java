@@ -20,9 +20,11 @@ public class A2Q1 {
     public static void main(String[] args) {
         // creating city kitchener
         City kitchener = new City();
+
         //creating robot Timmy
         Robot timmy = new Robot(kitchener, 1, 1, Direction.EAST);
-        //inserting new things
+
+        //inserting 10 new items
         new Thing(kitchener, 1, 2);
         new Thing(kitchener, 1, 3);
         new Thing(kitchener, 1, 4);
@@ -33,34 +35,34 @@ public class A2Q1 {
         new Thing(kitchener, 1, 9);
         new Thing(kitchener, 1, 10);
         new Thing(kitchener, 1, 11);
-        //turn on the things lables
 
         //making timmy move to the first thing
         timmy.move();
 
         //loop
         while (true) {
+            //making timmy pick up the items
             while (timmy.canPickThing()) {
                 timmy.pickThing();
-
             }
+
             //when timmy picks up items from 1-6 he will move forward and pick up more items
             if (timmy.countThingsInBackpack() >= 1) {
                 timmy.move();
             }
+
             //if Timmy picks up 7 items he will stop picking up items
             if (timmy.countThingsInBackpack() == 7) {
                 break;
             }
-
         }
-        //move
-        timmy.move();
-        timmy.move();
-        timmy.move();
 
-
-
-
+        //move until avenue 12
+        while (true) {
+            timmy.move();
+            if (timmy.getAvenue() == 12) {
+                break;
+            }
+        }
     }
 }
